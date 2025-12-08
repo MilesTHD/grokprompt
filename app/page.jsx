@@ -18,6 +18,9 @@ export default function Home() {
     setClips(clips.map(c => c.id === id ? { ...c, [field]: value } : c));
   };
 
+  <div className="fixed top-4 right-4 bg-green-500 text-white px-4 py-2 rounded text-sm z-50">
+  v4 UNBREAKABLE – Modern UI Locked! (Check console)
+</div>
   const generatePrompt = (clip, index) => {
     const base = `[Clip ${clip.id}] — ${aspect} — ${length} — Spicy: ${spicy ? 'ON' : 'off'}\n` +
       `Subject: ${clip.subject || '(empty)'}\nMotion: ${clip.motion || '(empty)'}\nEnvironment: ${clip.environment || '(empty)'}\n` +
