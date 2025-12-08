@@ -4,13 +4,34 @@
 @tailwind utilities;
 
 @layer base {
+  :root {
+    --background: theme('colors.slate.900');
+    --gradient-start: theme('colors.slate.900');
+    --gradient-via: theme('colors.purple.900');
+    --gradient-end: theme('colors.slate.900');
+  }
+  * {
+    @apply border-border;
+  }
   body {
-    @apply bg-slate-900 text-white;
+    @apply bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 text-white antialiased;
+    color: theme('colors.white');
+    background: linear-gradient(to bottom right, var(--gradient-start), var(--gradient-via), var(--gradient-end));
   }
 }
 
 @layer components {
   .glass {
-    @apply backdrop-blur-xl bg-white/5 border border-white/10;
+    @apply backdrop-blur-xl bg-white/5 border border-white/10 shadow-2xl;
+  }
+}
+
+@layer utilities {
+  @keyframes spin-slow {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+  .animate-spin-slow {
+    animation: spin-slow 3s linear infinite;
   }
 }
