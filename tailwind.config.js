@@ -21,6 +21,7 @@ module.exports = {
     'animate-(ping|pulse|spin-slow)',
     'rounded-(2xl|3xl)',
     'shadow-(2xl|lg)'
+    'bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900'
   ],
   theme: {
     extend: {
