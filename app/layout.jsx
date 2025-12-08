@@ -1,7 +1,7 @@
 import "./globals.css";
 
 export const metadata = {
-  title: "GrokChain – Video Prompt Builder for Grok Imagine",
+  title: "GrokPrompt – Video Prompt Builder for Grok Imagine",
   description: "Chain perfect prompts for Grok Imagine videos",
 };
 
