@@ -10,7 +10,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <head>
         <link rel="manifest" href="/manifest.json" />
-        <link rel="icon" href="/icon-192.png" />
+        <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/2272/2272963.png" />
         <meta name="theme-color" content="#22d3ee" />
       </head>
       <body>{children}</body>
