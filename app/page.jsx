@@ -52,9 +52,8 @@ export default function Home() {
         /* PURGE SCAN COMMENTS: bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 text-white min-h-screen max-w-5xl mx-auto p-6 text-center py-12 text-6xl font-black flex items-center justify-center gap-4 mb-4 w-16 h-16 animate-spin-slow w-12 h-12 animate-pulse text-xl mt-2 cyan-200 max-w-2xl opacity-0 y-30 duration-0.8 backdrop-blur-xl bg-white/5 rounded-3xl p-8 mb-8 border border-white/10 shadow-2xl text-2xl font-bold gap-3 w-6 h-6 grid grid-cols-1 md:grid-cols-3 gap-6 space-y-2 text-cyan-300 font-semibold text-sm w-2 h-2 bg-cyan-400 rounded-full animate-ping w-full p-4 rounded-2xl bg-slate-800/50 border border-cyan-500/30 focus:border-cyan-400 transition-all duration-300 text-purple-300 border-purple-500/30 focus:border-purple-400 flex justify-end md:justify-start text-xl cursor-pointer group w-7 h-7 bg-red-500 bg-gray-600 text-red-300 text-gray-400 space-y-6 text-3xl cyan-400 w-8 h-8 md:grid-cols-2 capitalize gray-300 w-4 h-4 text-yellow-400 p-5 h-24 resize-none border-white/20 focus:border-cyan-500 focus:outline-none mt-8 cursor-pointer text-cyan-400 bg-slate-800/30 rounded-xl w-5 h-5 mt-4 p-6 bg-slate-900/80 border-cyan-500/20 overflow-x-auto flex-col sm:flex-row pt-8 border-t justify-center scale-1.05 box-shadow-0-10px-25px-rgba-6-182-212-0.4 scale-0.98 px-12 py-5 rounded-2xl text-xl font-bold shadow-lg from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 from-green-500 to-emerald-600 hover:from-green-400 hover:to-emerald-500 box-shadow-0-10px-25px-rgba-34-197-94-0.4 mt-16 text-gray-500 */
       `}</style>
      
-     <div style={{ minHeight: '100vh', background: 'linear-gradient(to bottom right, #0f172a 0%, #581c87 50%, #0f172a 100%)', color: 'white', overflowX: 'hidden' }}>
-  {/* MAIN CONTAINER – FIXES OVERFLOW */}
-  <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '1.5rem' }}>
+      <div style={{ minHeight: '100vh', background: 'linear-gradient(to bottom right, #0f172a 0%, #581c87 50%, #0f172a 100%)', color: 'white', overflowX: 'hidden' }}>
+        <div style={{ maxWidth: '80rem', margin: '0 auto', padding: '1.5rem' }}>
           {/* Hero */}
           <motion.div 
             initial={{ opacity: 0, y: -30 }} 
@@ -64,7 +63,7 @@ export default function Home() {
           >
             <h1 style={{ fontSize: '3.75rem', fontWeight: '900', backgroundImage: 'linear-gradient(to right, #22d3ee, #3b82f6, #8b5cf6)', backgroundClip: 'text', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '1rem', marginBottom: '1rem' }}>
               <Sparkles style={{ width: '4rem', height: '4rem', animation: 'spin-slow 3s linear infinite' }} /> 
-              GrokPrompt 
+              GrokChain 
               <Zap style={{ width: '3rem', height: '3rem', animation: 'pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite' }} />
             </h1>
             <p style={{ fontSize: '1.25rem', marginTop: '0.5rem', color: '#22d3ee', maxWidth: '32rem', margin: '0 auto' }}>Craft infinite video chains for Grok Imagine – structured, seamless, and spicy.</p>
@@ -123,22 +122,19 @@ export default function Home() {
           </motion.div>
 
           {/* Clips */}
-         <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem', marginBottom: '2rem' }}>
-      {clips.map((clip, i) => (
-        <motion.div 
-          key={clip.id} 
-          initial={{ opacity: 0, y: 50 }} 
-          animate={{ opacity: 1, y: 0 }} 
-          transition={{ delay: i * 0.1, duration: 0.6 }}
-          className="glass" 
-          style={{ borderRadius: '1.5rem', padding: '2rem', overflow: 'hidden' }}  // Added overflow-hidden
-        >
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem', marginBottom: '2rem' }}>
+            {clips.map((clip, i) => (
+              <motion.div 
+                key={clip.id} 
+                initial={{ opacity: 0, y: 50 }} 
+                animate={{ opacity: 1, y: 0 }} 
+                transition={{ delay: i * 0.1, duration: 0.6 }}
+                className="glass" style={{ borderRadius: '1.5rem', padding: '2rem' }}
+              >
                 <h2 style={{ fontSize: '1.875rem', fontWeight: 'bold', marginBottom: '1.5rem', display: 'flex', alignItems: 'center', gap: '0.75rem', color: '#22d3ee' }}>
                   <Sparkles style={{ width: '2rem', height: '2rem' }} /> Clip {clip.id}
                 </h2>
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(1, minmax(0, 1fr))', gap: '1.5rem' }} className="md:grid-cols-2">
-  {/* textareas remain the same below this line */}
-</div>
                   {['subject', 'motion', 'environment', 'camera', 'style', 'audio'].map(field => (
                     <div key={field} style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
                       <label style={{ fontSize: '0.875rem', fontWeight: '500', color: '#d1d5db', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
