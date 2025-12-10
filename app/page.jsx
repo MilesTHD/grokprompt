@@ -50,7 +50,7 @@ export default function Home() {
 
       <div style={{ minHeight: '100vh', background: 'linear-gradient(to bottom right, #0f172a 0%, #581c87 50%, #0f172a 100%)', color: 'white', overflowX: 'hidden' }}>
         {/* MAIN CONTAINER – fixes overflow */}
-        <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '1.5rem' }}>
+        <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '1.5rem 2rem' }}>  {/* added 2rem horizontal padding */}
 
           {/* Hero */}
           <motion.div initial={{ opacity: 0, y: -30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} style={{ textAlign: 'center', padding: '3rem 0' }}>
