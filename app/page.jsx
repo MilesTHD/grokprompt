@@ -80,20 +80,12 @@ export default function Home() {
                     {field.charAt(0).toUpperCase() + field.slice(1)}
                   </label>
                   <textarea
-  value={clip[field]}
-  onChange={e => updateField(clip.id, field, e.target.value)}
-  placeholder={
-    field === 'subject' ? "Main subject or character (e.g., cyberpunk hacker, majestic eagle)" :
-    field === 'motion' ? "Action or movement (e.g., sprinting through rain, soaring over mountains)" :
-    field === 'environment' ? "Scene or background (e.g., neon-lit rainy alley, cozy living room)" :
-    field === 'camera' ? "Shot type or movement (e.g., low-angle tracking shot, sweeping aerial drone)" :
-    field === 'style' ? "Visual aesthetic (e.g., ultra-realistic, cyberpunk 2077, Pixar animation)" :
-    field === 'audio' ? "Sound hints (e.g., wet footsteps & synthwave beat, wind whooshes)" :
-    "Describe..."
-  }
-  rows={4}
-  style={{ ... }}
-/>
+                    value={clip[field]}
+                    onChange={e => updateField(clip.id, field, e.target.value)}
+                    placeholder={`Describe ${field}...`}
+                    rows={3}
+                    style={{ width: "100%", padding: "0.5rem", background: "rgba(0,0,0,0.4)", border: "1px solid rgba(255,255,255,0.2)", borderRadius: "0.5rem", color: "white" }}
+                  />
                 </div>
               ))}
             </div>
