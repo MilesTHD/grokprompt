@@ -36,7 +36,7 @@ export default function Home() {
         <h1 style={{ fontSize: "3rem", textAlign: "center", marginBottom: "1rem", color: "#22d3ee" }}>GrokChain</h1>
         <p style={{ textAlign: "center", marginBottom: "3rem", color: "#a78bfa" }}>Video Prompt Builder for Grok Imagine</p>
 
-          // global settings start
+          /* global settings start */
         {/* Global Settings Card */}
 <div style={{ background: 'rgba(255,255,255,0.07)', borderRadius: '1.5rem', padding: '2rem', marginBottom: '2rem', border: '1px solid rgba(255,255,255,0.1)' }}>
   <h3 style={{ fontSize: '1.5rem', fontWeight: 'bold', marginBottom: '1.5rem', color: '#22d3ee' }}>Chain Settings</h3>
@@ -68,7 +68,7 @@ export default function Home() {
     </div>
   </div>
 </div>
-        // global settings end
+       /* global settings end */
         
         {clips.map((clip, i) => (
           <div key={clip.id} style={{ background: "rgba(255,255,255,0.05)", borderRadius: "1rem", padding: "1.5rem", marginBottom: "1.5rem", border: "1px solid rgba(255,255,255,0.1)" }}>
@@ -98,14 +98,14 @@ export default function Home() {
           </div>
         ))}
 
-        <div style={{ textAlign: "center", margin: "2rem 0" }}>
-          <button onClick={addClip} style={{ padding: "1rem 2rem", background: "#22d3ee", color: "white", border: "none", borderRadius: "0.5rem", marginRight: "1rem", cursor: "pointer" }}>
-            + Add Next Clip
-          </button>
-          <button onClick={copyAll} style={{ padding: "1rem 2rem", background: "#22c55e", color: "white", border: "none", borderRadius: "0.5rem", cursor: "pointer" }}>
-            Copy All Prompts
-          </button>
-        </div>
+       <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1rem', margin: '3rem 0' }} className="md:flex-row">
+  <button onClick={addClip} style={{ padding: '1rem 2.5rem', background: '#22d3ee', color: 'black', border: 'none', borderRadius: '99px', fontSize: '1.2rem', fontWeight: 'bold', cursor: 'pointer', width: '100%', maxWidth: '300px' }}>
+    + Add Next Clip
+  </button>
+  <button onClick={copyAll} style={{ padding: '1rem 2.5rem', background: '#22c55e', color: 'white', border: 'none', borderRadius: '99px', fontSize: '1.2rem', fontWeight: 'bold', cursor: 'pointer', width: '100%', maxWidth: '300px' }}>
+    Copy All Prompts
+  </button>
+</div>
 
         <p style={{ textAlign: "center", color: "#9ca3af", fontSize: "0.875rem" }}>
           Powered by Grok • grokprompt.cc
