@@ -36,6 +36,40 @@ export default function Home() {
         <h1 style={{ fontSize: "3rem", textAlign: "center", marginBottom: "1rem", color: "#22d3ee" }}>GrokChain</h1>
         <p style={{ textAlign: "center", marginBottom: "3rem", color: "#a78bfa" }}>Video Prompt Builder for Grok Imagine</p>
 
+          //global settings start
+        {/* Global Settings Card */}
+<div style={{ background: 'rgba(255,255,255,0.07)', borderRadius: '1.5rem', padding: '2rem', marginBottom: '2rem', border: '1px solid rgba(255,255,255,0.1)' }}>
+  <h3 style={{ fontSize: '1.5rem', fontWeight: 'bold', marginBottom: '1.5rem', color: '#22d3ee' }}>Chain Settings</h3>
+  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '1.5rem' }}>
+    <div>
+      <label style={{ display: 'block', marginBottom: '0.5rem', color: '#e0e0e0' }}>Aspect Ratio</label>
+      <select value={aspect} onChange={e => setAspect(e.target.value)} style={{ width: '100%', padding: '1rem', background: 'rgba(0,0,0,0.4)', border: '1px solid rgba(255,255,255,0.2)', borderRadius: '0.75rem', color: 'white' }}>
+        <option value="16:9">16:9 (Landscape)</option>
+        <option value="9:16">9:16 (Vertical Reels)</option>
+        <option value="1:1">1:1 (Square)</option>
+        <option value="4:5">4:5 (Portrait)</option>
+      </select>
+    </div>
+    <div>
+      <label style={{ display: 'block', marginBottom: '0.5rem', color: '#e0e0e0' }}>Clip Length</label>
+      <select value={length} onChange={e => setLength(e.target.value)} style={{ width: '100%', padding: '1rem', background: 'rgba(0,0,0,0.4)', border: '1px solid rgba(255,255,255,0.2)', borderRadius: '0.75rem', color: 'white' }}>
+        <option>6s (Quick)</option>
+        <option>8s</option>
+        <option>10s (Standard)</option>
+        <option>12s</option>
+        <option>15s (Epic)</option>
+      </select>
+    </div>
+    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+      <label style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', fontSize: '1.25rem', fontWeight: 'bold', cursor: 'pointer', color: spicy ? '#fca5a5' : '#9ca3af' }}>
+        <input type="checkbox" checked={spicy} onChange={e => setSpicy(e.target.checked)} style={{ width: '1.75rem', height: '1.75rem', borderRadius: '50%', background: spicy ? '#ef4444' : '#4b5563' }} />
+        Spicy Mode {spicy && '(🔥 Engaged)'}
+      </label>
+    </div>
+  </div>
+</div>
+        //global settings end
+        
         {clips.map((clip, i) => (
           <div key={clip.id} style={{ background: "rgba(255,255,255,0.05)", borderRadius: "1rem", padding: "1.5rem", marginBottom: "1.5rem", border: "1px solid rgba(255,255,255,0.1)" }}>
             <h2 style={{ fontSize: "1.5rem", color: "#22d3ee", marginBottom: "1rem" }}>Clip {clip.id}</h2>
