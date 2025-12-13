@@ -36,7 +36,7 @@ export default function Home() {
         <h1 style={{ fontSize: "3rem", textAlign: "center", marginBottom: "1rem", color: "#22d3ee" }}>GrokChain</h1>
         <p style={{ textAlign: "center", marginBottom: "3rem", color: "#a78bfa" }}>Video Prompt Builder for Grok Imagine</p>
 
-          //global settings start
+          // global settings start
         {/* Global Settings Card */}
 <div style={{ background: 'rgba(255,255,255,0.07)', borderRadius: '1.5rem', padding: '2rem', marginBottom: '2rem', border: '1px solid rgba(255,255,255,0.1)' }}>
   <h3 style={{ fontSize: '1.5rem', fontWeight: 'bold', marginBottom: '1.5rem', color: '#22d3ee' }}>Chain Settings</h3>
@@ -68,7 +68,7 @@ export default function Home() {
     </div>
   </div>
 </div>
-        //global settings end
+        // global settings end
         
         {clips.map((clip, i) => (
           <div key={clip.id} style={{ background: "rgba(255,255,255,0.05)", borderRadius: "1rem", padding: "1.5rem", marginBottom: "1.5rem", border: "1px solid rgba(255,255,255,0.1)" }}>
